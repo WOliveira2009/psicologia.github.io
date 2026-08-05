@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicologia & Bem-Estar | Espaço Terapêutico</title>
+    <!-- Google Fonts para Tipografia Marcante e Minimalista -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cores Modernas */
+        :root {
+            --preto: #111111;
+            --cinza-chumbo: #212529;
+            --cinza-claro: #f8f9fa;
+            --branco: #ffffff;
+            --texto-suave: #6c757d;
+        }
+
+        /* Reset e Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--branco);
+            color: var(--preto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Cabeçalho / Menu */
+        header {
+            padding: 32px 0;
+            background-color: var(--branco);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        /* Seção Hero (Apresentação Principal com Fonte Grande) */
+        .hero {
+            padding: 80px 0 120px 0;
+            background-color: var(--branco);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: var(--preto);
+            margin-bottom: 32px;
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: var(--texto-suave);
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Botões de Ação Rápidos (WhatsApp / Links) */
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--cinza-chumbo);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--preto);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--preto);
+            border: 2px solid var(--preto);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--preto);
+            color: var(--branco);
+        }
+
+        /* Seção de Conteúdo & Vantagens (Texto Animador) */
+        .features {
+            background-color: var(--cinza-claro);
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 48px;
+        }
+
+        .grid-textos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1px)); /* Flexível */
+            gap: 40px;
+        }
+
+        .card-texto {
+            background: var(--branco);
+            padding: 40px;
+            border-left: 4px solid var(--cinza-chumbo);
+        }
+
+        .card-texto h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        /* Seção de Galeria/Layout (Espaço para Fotos) */
+        .gallery {
+            padding: 100px 0;
+            background-color: var(--branco);
+        }
+
+        .grid-fotos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1px));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .foto-container {
+            background-color: var(--cinza-claro);
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .foto-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Central de Links e Compras (Estilo Linktree Minimalista) */
+        .links-section {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .links-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .links-section p {
+            color: #a0aec0;
+            margin-bottom: 48px;
+        }
+
+        .links-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-item {
+            background-color: var(--cinza-chumbo);
+            color: var(--branco);
+            padding: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            border: 1px solid #343a40;
+        }
+
+        .link-item:hover {
+            background-color: var(--branco);
+            color: var(--preto);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--preto);
+            color: #a0aec0;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #212529;
+        }
+
+        /* Responsividade Básica Avançada */
+        @media (max-width: 768px) {
+            .grid-textos, .grid-fotos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Superior -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Psicologia.</div>
+        </div>
+    </header>
+
+    <!-- Apresentação Principal (Hero) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cuidar da mente é o primeiro passo para a liberdade.</h1>
+            <p>Descubra as vantagens do processo terapêutico moderno: clareza mental, inteligência emocional e um espaço seguro focado no seu desenvolvimento pessoal.</p>
+            <div class="cta-group">
+                <!-- Substitua o número abaixo pelo seu link real do WhatsApp -->
+                <a href="https://wa.me" target="_blank" class="btn btn-primary">Agendar Consulta via WhatsApp</a>
+                <a href="#links" class="btn btn-secondary">Livros & Recomendações</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens e Textos Animadores -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Por que investir em Psicologia?</h2>
+            <div class="grid-textos">
+                <div class="card-texto">
+                    <h3>Autoconhecimento</h3>
+                    <p>Compreender seus padrões de comportamento permite que você faça escolhas conscientes, deixando de ser refém de reações automáticas.</p>
+                </div>
+                <div class="card-texto">
+                    <h3>Resiliência Emocional</h3>
+                    <p>Desenvolva ferramentas psicológicas práticas para enfrentar crises, ansiedades e os desafios inevitáveis da rotina com estabilidade.</p>
+                </div>
+                <div class="card-texto">
+                    <h3>Relações Saudáveis</h3>
+                    <p>Aprenda a estabelecer limites claros e melhore sua comunicação com parceiros, familiares e no ambiente de trabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espaço para Fotos e Layouts -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">O Espaço</h2>
+            <div class="grid-fotos">
+                <!-- Para testar, mantive imagens genéricas profissionais do Unsplash. Substitua os links pelas suas fotos reais. -->
+                <div class="foto-container">
+                    <img src="https://unsplash.com" alt="Consultório moderno">
+                </div>
+                <div class="foto-container">
+                    <img src="https://unsplash.com" alt="Atendimento online ou leitura">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espaço de Links de Compras e Redes (Estilo Hub) -->
+    <section id="links" class="links-section">
+        <div class="container">
+            <h2>Materiais & Recomendações</h2>
+            <p>Acesse livros recomendados, e-books, cursos e canais de contato direto.</p>
+            
+            <div class="links-wrapper">
+                <!-- Link de Vendas / Afiliados -->
+                <a href="https://amazon.com.br" target="_blank" class="link-item">🛒 Livros Recomendados na Amazon</a>
+                <!-- Link de E-book próprio ou Curso -->
+                <a href="#" target="_blank" class="link-item">📘 Baixe meu E-book de Inteligência Emocional</a>
+                <!-- Outros Links Úteis -->
